@@ -638,6 +638,7 @@ display: block;
 
 .modalinputblock{
   position: relative;
+  margin-bottom: 8px;
 }
 
 
@@ -700,13 +701,13 @@ transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 border: 1px solid #8e8f99;
 width: 16px;
 height: 16px;
-
+display: inline-flex;
 align-items: center;
 justify-content: center;
 margin-right: 8px;
 border: 1px solid rgba(46, 47, 66, 0.4); 
 transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-display: inline-flex;
+
 fill:transparent;
 }
 .check-box{
@@ -723,14 +724,14 @@ fill:transparent;
 .check-box:checked +.check-label .checkspan {
   border: none;
   background-color: #404BBF;
-  fill: #F4F4FD;;
+  fill: #ffffff;
 }
 
 
 
 .check-link{
   text-decoration:underline;
-  color:#4d5ae5;
+  color: #4d5ae5;;
   font-weight: 400;
   font-size: 12px;
   line-height: 117%;
