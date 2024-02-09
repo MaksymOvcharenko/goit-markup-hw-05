@@ -536,14 +536,15 @@ header {
 }
 /* modal  */
 .backdrop {
-  background: #2e2f4267;
+  background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top:0;
   width: 100%;
   height: 100%;
-  opacity: 0;
+  /* opacity: 0;
 visibility: hidden;
-pointer-events: none;
+pointer-events: none; */
+transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .is-open{
   opacity: 1;
@@ -552,20 +553,22 @@ pointer-events: none;
 }
 .modal {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
-background: white;
+  background: #fcfcfc;
 border-radius: 4px;
 width: 408px;
-height: 584px;
-position: relative;
+min-height: 584px;
+position: absolute;
 left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
 display: block;
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+padding: 72px 24px 24px 24px;
 
 }
 
 .modal_form {
-  padding: 16px 24px;
+  /* padding: 16px 24px; */
   
   
 }
@@ -578,7 +581,7 @@ line-height: 150%;
 letter-spacing: 0.02em;
 text-align: center;
 color: #2E2F42;
-padding-top: 72px;
+margin-bottom: 16px;
 }
 
 .modal-close {
@@ -589,8 +592,13 @@ padding-top: 72px;
   position: absolute;
   top: 24px;
   right: 24px;
-  border: 1px solid #8e8f99;
-  
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-modal-close{
@@ -599,19 +607,21 @@ padding-top: 72px;
   left: 50%;
 top: 50%;
 transform: translate(-50%, -50%);
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-close:active{
-  background-color: #404BBF;
+.modal-close:hover, .modal-close:focus{
+  background-color: #404bbf;
   border: none;
 }
 
-.modal-close:active .icon-modal-close{
-  fill: white;
+.modal-close:hover .icon-modal-close{
+  fill: #ffffff;
 }
 
 
 .modal-input-block {
+  margin-bottom: 16px;
   
 }
 .modal-label {
@@ -621,29 +631,42 @@ font-size: 12px;
 line-height: 117%;
 letter-spacing: 0.04em;
 color:#8E8F99;
-padding-bottom: 4px;
+margin-bottom: 4px;
+display: block;
   
 }
+
+.modalinputblock{
+  position: relative;
+}
+
+
+
 .modal-input {
   width: 100%;
   display: block;
-  border: 1px solid #2e2f4267;
+  border: 1px solid rgba(46, 47, 66, 0.4);
 border-radius: 4px;
-width: 360px;
+background-color: transparent;
 height: 40px;
-padding-left: 34px;
+padding-left: 38px;
 position: relative;
+outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
 .modal-input:focus{
-  border-color: #404BBF;
+  border-color: #4D5AE5;
 }
 .icon-modal-name {
   position: absolute;
-  transform: translate(14px, -26px);
-  fill:#2e2f4267
+  left: 16px;
+  top: 50%;
+  fill:#2e2f4267;
+  transform: translateY(-50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .modal-input:focus + .icon-modal-name {
-  fill:#404bbf;
+  fill: #4D5AE5;
 }
 
 .textarea {
@@ -651,10 +674,15 @@ position: relative;
 font-size: 12px;
 line-height: 117%;
 letter-spacing: 0.04em;
-color:#8E8F99;
+color: rgba(46, 47, 66, 0.4);
 width: 360px;
 height: 120px;
 padding: 8px 16px;
+border: 1px solid rgba(46, 47, 66, 0.4);
+background-color: transparent;
+outline: transparent;
+resize: none;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
 }
 .check-label{
   
@@ -672,10 +700,14 @@ padding: 8px 16px;
 border: 1px solid #8e8f99;
 width: 16px;
 height: 16px;
-display: flex;
+
 align-items: center;
 justify-content: center;
 margin-right: 8px;
+border: 1px solid rgba(46, 47, 66, 0.4); 
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+display: inline-flex;
+fill:transparent;
 }
 .check-box{
 
@@ -691,14 +723,14 @@ margin-right: 8px;
 .check-box:checked +.check-label .checkspan {
   border: none;
   background-color: #404BBF;
-  fill: #fff;
+  fill: #F4F4FD;;
 }
 
 
 
 .check-link{
   text-decoration:underline;
-  color: navy;
+  color:#4d5ae5;
   font-weight: 400;
   font-size: 12px;
   line-height: 117%;
@@ -714,6 +746,7 @@ margin-right: 8px;
   position: relative;
   margin-top: 16px;
   align-items: center;
+  margin-bottom: 24px;
   
 
 }
