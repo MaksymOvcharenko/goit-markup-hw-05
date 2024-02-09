@@ -758,6 +758,7 @@ letter-spacing: 0.02em;
 }
 .inputsubsc-bot {
   display: flex;
+  
   gap: 24px;
 }
 .subscribe {
