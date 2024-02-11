@@ -45,7 +45,7 @@
     <section id="main" class="main">
       <div class="container">
         <h1 class="main-title">Effective Solutions for Your Business</h1>
-        <button type="button" class="main-button">Order Service</button>
+        <button type="button" class="main-button" data-modal-open>Order Service</button>
       </div>
     </section>
     <section id="top" class="top">
@@ -364,9 +364,9 @@
       </div>
     </div>
   </footer>
-  <div class="backdrop">
+  <div class="backdrop" data-modal>
     <div class="modal">
-      <button class="modal-close" type="button">
+      <button class="modal-close" type="button" data-modal-close>
         <svg class="icon-modal-close" width="8" height="8">
           <use href="./images/icons.svg#icon-close"></use>
         </svg>
@@ -420,13 +420,14 @@
               <svg class="icon-modal-check" width="10" height="8">
                 <use href="./images/icons.svg#icon-check"></use>
               </svg></span>
-            I accept the terms and conditions of the<a href="" class="nav-link check-link">Privacy Policy</a>
+            I accept the terms and conditions of the<a href="" class="nav-link check-link"> Privacy Policy</a>
           </label>
         </div>
         <button class="modal-btn">Send</button>
       </form>
     </div>
   </div>
+  <script src="./js/modal.js"></script>
 </body>
 
 </html>
